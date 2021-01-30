@@ -21,5 +21,9 @@ describe("songFilter", () => {
       array = [];
       expect(function() {songFilter(array, 10, 40)}).toThrowError("No song was inputted");
     })
+    it("has default lower value of 40 and higher value of 1000 if neither are inputted", () => {
+      array = [10, 45, 100, 1001];
+      expect(songFilter(array)).toEqual([40, 45, 100, 1000]);
+    })
   })
 })
