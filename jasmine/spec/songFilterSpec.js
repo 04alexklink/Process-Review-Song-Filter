@@ -25,5 +25,9 @@ describe("songFilter", () => {
       array = [10, 45, 100, 1001];
       expect(songFilter(array)).toEqual([40, 45, 100, 1000]);
     })
+    it("requires song frequencies to all be integers", () => {
+      array = ["hello", 45, 100];
+      expect(function() {songFilter(array, 10, 40)}).toThrowError("You have not inputted integer values for song frequency");
+    })
   })
 })
