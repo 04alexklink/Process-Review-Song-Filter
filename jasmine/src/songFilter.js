@@ -1,3 +1,9 @@
-function songFilter() {
-  return [10, 20, 40];
+function songFilter(song, lowValue, highValue) {
+  var output = song.map((soundWave) => {
+    if(soundWave < lowValue) {
+      return lowValue;
+    };
+    return soundWave;
+  });
+  return output;
 };
