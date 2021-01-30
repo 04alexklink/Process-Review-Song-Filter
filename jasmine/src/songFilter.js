@@ -1,4 +1,5 @@
 function songFilter(song, lowValue = 40, highValue = 1000) {
+  if(lowValue > highValue) {throw new Error ("lowValue is greater than highValue provided.")}
   if(!Number.isInteger(lowValue) || !Number.isInteger(highValue)) {
       throw new Error("Please provide integer threshold values")
   }

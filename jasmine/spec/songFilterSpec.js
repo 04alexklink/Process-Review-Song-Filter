@@ -34,5 +34,9 @@ describe("songFilter", () => {
       expect(function() {songFilter(array, "Hello", 40)}).toThrowError("Please provide integer threshold values");
       expect(function() {songFilter(array, 10, "Hello")}).toThrowError("Please provide integer threshold values")
     })
+    it("raises error if lowValue provided is > highValue value provided", () => {
+      array = [15, 20, 45]
+      expect(function() {songFilter(array, 20, 15)}).toThrowError("lowValue is greater than highValue provided.")
+    })
   })
 })

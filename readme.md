@@ -26,12 +26,14 @@ INPUT                        | OUTPUT
 [15, 20, 45]                 | [40, 40, 45] : Default low and high value of 40 and 1000 if not inputted as arguments.       |
 [15, 20, 45], "Hello", 40    | Error is thrown: "Please provide integer threshold values"
 [15, 20, 45], 10, "Hello"    | Error is thrown: "Please provide integer threshold values"
+[15, 20, 45], 20, 15         | Error is thrown: "lowValue is greater than highValue provided."
 
 Edge Cases:
 - If no low or high value provided as arguments, default of 40 and 1000 respectively is used
 - If provide no song/emptry array, error is thrown telling you that a song is needed as input
 - If a frequency in the song is found to be a non-integer, error is thrown 
 - If a low or high value provided is not an integer, error is thrown  
+- If lowValue inputted is higher than highValue inputted, error is thrown
 
 Method vs Class instance?
 Does the modified song simply just need to be returned, or stored and kept. If stored and kept, i'd create a class so that a new instance of the filter can be used with each new song. 
