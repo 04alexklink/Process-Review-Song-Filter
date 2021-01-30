@@ -29,5 +29,10 @@ describe("songFilter", () => {
       array = ["hello", 45, 100];
       expect(function() {songFilter(array, 10, 40)}).toThrowError("You have not inputted integer values for song frequency");
     })
+    it("requires low and high values provided to be integers", () => {
+      array = [10, 20, 45];
+      expect(function() {songFilter(array, "Hello", 40)}).toThrowError("Please provide integer threshold values");
+      expect(function() {songFilter(array, 10, "Hello")}).toThrowError("Please provide integer threshold values")
+    })
   })
 })
