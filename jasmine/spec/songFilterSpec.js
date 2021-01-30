@@ -8,4 +8,8 @@ describe("songFilter", () => {
     array = [10, 20, 40];
     expect(songFilter(array, 15, 40)).toEqual([15, 20, 40]);
   })
+  it("returns the song with highest value modified to fit threshold requirement", () => {
+    array = [10, 20, 40];
+    expect(songFilter(array, 10, 35)).toEqual([10, 20, 35]);
+  })
 })
