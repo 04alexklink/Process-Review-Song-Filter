@@ -1,5 +1,6 @@
 function songFilter(song, lowValue, highValue) {
-  var output = song.map((soundWave) => {
+  if(song.length === 0) {throw new Error("No song was inputted")}
+  var filteredSong = song.map((soundWave) => {
     if(soundWave < lowValue) {
       return lowValue;
     } 
@@ -8,5 +9,5 @@ function songFilter(song, lowValue, highValue) {
     }
     return soundWave;
   });
-  return output;
+  return filteredSong;
 };

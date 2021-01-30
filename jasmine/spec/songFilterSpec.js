@@ -12,4 +12,14 @@ describe("songFilter", () => {
     array = [10, 20, 40];
     expect(songFilter(array, 10, 35)).toEqual([10, 20, 35]);
   })
+  it("returns the song with both low and high value modifications when both exceeded", () => {
+    array = [10, 45, 100, 1001];
+    expect(songFilter(array, 40, 1000)).toEqual([40, 45, 100, 1000]);
+  })
+  describe("edge cases", () => {
+    it("throws error if try to input empty array/no song", () => {
+      array = [];
+      expect(function() {songFilter(array, 10, 40)}).toThrowError("No song was inputted");
+    })
+  })
 })
